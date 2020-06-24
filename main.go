@@ -1,15 +1,13 @@
 package main
 
 import (
-	"github.com/rokin04/go/models"
 	"fmt"
+	"net/http"
+
+	"github.com/rokin04/go/controllers"
 )
 
 func main() {
-	u := models.User{
-		ID: 2,
-		Firstname: "rake",
-		Lastname: "m",
-	}
-	fmt.Println(u)
+	controllers.RegisterControllers()
+	http.ListenAndServe(":3000", nil)
 }
